@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test019.html</title>
+<style type="text/css">
+	* {font-size: 20px; font-weight: bold;}
+	input.btn {background-color:#FFF0F5; border-radius: 20px;}
+	input.btn:hover {color: #DDA0DD;}
+	input:focus  { background-color: #E0FFFF;}
+	input {font-family: 나눔고딕코딩; font-weight: bold; border-radius: 20px;}
+	textarea {font-family: 나눔고딕코딩; font-weight: bold; background-color: #E6E6FA; border-radius: 20px;}
+	.btn {width: 200px;}
+</style>
+
+<script type="text/javascript">
+	
+	function add()
+	{
+		var num = parseInt(document.getElementById("num").value);		
+		var sum=0;
+		document.getElementById("result").value="";
+		
+		if (num<100 || num==null)
+		{
+			alert("100이상을 입력해주세요!!!!!!");
+			return;
+		}
+		
+		for (var i = 1; i <= num; i++)
+		{
+			sum += i;
+			
+			if(i%10==0)
+			{
+				document.getElementById("result").value += "1~ " + i + " : " + sum + "\n";	
+			}
+			
+		}
+		document.getElementById("result").value += "1~ " + num + " : " + sum + "\n";	
+		
+	}
+	
+</script>
+
+</head>
+<body>
+
+<!--  
+	1 부터 n 까지의 합을 계산하되 n 은 100 이상만 허용하고
+	출력 시 10의 배수가 될 때 마다 중간 합을 출력 할 수 있는 페이지를 구성한다.
+	반복문을 활용할 수 있도록 한다.
+	
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃
+	---------------------------------------------------------------
+	정수 입력(100 이상) [   100    ] → 조건 유효성			num
+	
+		< 결과 >		< 취소 >
+		
+	--------------------------------- → textarea			result
+	|1 ~ 10 : 55				    |
+	|1 ~ 20 : 210					|
+	|1 ~ 30 : xxx					|
+	|	:							|
+	|1 ~ 100 : 5050					|
+	---------------------------------
+	---------------------------------------------------------------
+
+-->
+<div>
+	<h1>자바스크립트 활용</h1>
+</div>
+
+
+<div>
+	<form>
+	<hr>
+		<div>
+			<span style="display:inline-block; width:250px;">정수 입력(100 이상)</span>
+			<input type="text" class="txt" id="num" style="width: 120px;">
+		</div>
+		
+		<div>
+			<input type="button" class="btn" value="결과" onclick="add()">
+			<input type="reset" class="btn" value="취소">
+		</div>
+		
+		<br>
+		<div>
+			<textarea id="result" rows="20" cols="40" readonly="readonly"></textarea>			
+		</div>
+		
+	<hr>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test019.html</title>
+<style type="text/css">
+	* {font-size: 20px; font-weight: bold;}
+	input.btn {background-color:#FFF0F5; border-radius: 2px;}
+	input.btn:hover {color: #DDA0DD;}
+	input:focus  { background-color: #E0FFFF;}
+	input {font-family: 나눔고딕코딩; font-weight: bold;}
+	textarea {font-family: 나눔고딕코딩; font-weight: bold; background-color: #E6E6FA;}
+	.btn {width: 200px;}
+</style>
+
+<script type="text/javascript">
+	
+	function add()
+	{
+		// 결과 누를 때 결과 값 쌓이는 것 방지 
+		document.getElementById("result").value = "";
+		
+		var nNum = Number(document.getElementById("num").value);
+		var nSum = 0;
+		
+		if(nNum < 100)
+		{
+			alert("입력값은 100 이상만 가능합니다.");
+			return;
+		}
+		
+		for (var n = 1; n <= nNum; n++)					// 출력값이 하나인 이유는? → 계속 덮어써져서
+		{
+			nSum += n;
+			//document.getElementById("result").value += "1 ~ " + n + " : " + nSum + "<br>";
+			//document.getElementById("result").value += "1 ~ " + n + " : " + nSum + "\n";
+			
+			if(n%10==0)
+			{
+				document.getElementById("result").value += "1 ~ " + n + " : " + nSum + "\n";
+			}
+			
+		}
+		document.getElementById("result").value += "1 ~ " + nNum + " : " + nSum + "\n";		// 101 입력했을 때 101값 나오게 하려고! nNum check~!!
+		
+	}
+
+	/* 
+	//나의 풀이
+	function add()
+	{
+		// 확인
+		//alert("야아아~!!");
+		var num = parseInt(document.getElementById("num").value);
+		
+		if (num<100)
+		{
+			alert("100이상만 입력가능!!!!");
+			return;								// return check~!!
+		}
+		
+		var result = 0;
+		var str = "";							// check~!!
+		
+		for (var i = 1; i <= num; i++)
+		{
+			result += i;
+			
+			if(i%10==0)
+			{
+				str += "1~"+ i + " : " + result +"\n";		//check~!!
+			}
+			document.getElementById("result").value = str;
+		}
+	}
+	 */
+	
+</script>
+
+</head>
+<body>
+
+<!--  
+	1 부터 n 까지의 합을 계산하되 n 은 100 이상만 허용하고
+	출력 시 10의 배수가 될 때 마다 중간 합을 출력 할 수 있는 페이지를 구성한다.
+	반복문을 활용할 수 있도록 한다.
+	
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃
+	---------------------------------------------------------------
+	정수 입력(100 이상) [   100    ] → 조건 유효성			num
+	
+		< 결과 >		< 취소 >
+		
+	--------------------------------- → textarea			result
+	|1 ~ 10 : 55				    |
+	|1 ~ 20 : 210					|
+	|1 ~ 30 : xxx					|
+	|	:							|
+	|1 ~ 100 : 5050					|
+	---------------------------------
+	---------------------------------------------------------------
+
+-->
+<div>
+	<h1>자바스크립트 활용</h1>
+</div>
+
+
+<div>
+	<form>
+	<hr>
+		<div>
+			<span style="display:inline-block; width:250px;">정수 입력(100 이상)</span>
+			<input type="text" class="txt" id="num" style="width: 120px;">
+		</div>
+		
+		<div>
+			<input type="button" class="btn" value="결과" onclick="add()">
+			<input type="reset" class="btn" value="취소">
+		</div>
+		
+		<br>
+		<div>
+			<textarea id="result" rows="20" cols="40" readonly="readonly"></textarea>			
+		</div>
+		
+	<hr>
+	</form>
+</div>
+
+</body>
+</html>

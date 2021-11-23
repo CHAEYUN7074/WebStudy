@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test022.html</title>
+
+<style type="text/css">
+* {font-family: 맑은 고딕; font-weight: bold;}
+form {font-size: 20px; font-weight: bold; background:#FFD700;}
+.btn{margin-left:60px; width: 300px; font-weight: bold; font-size: 16px;}
+input {border-radius: 20px; width: 200px; text-align: center; font-size: 16px;}
+.span {text-align:center; width: 80px;  }
+
+.btn:hover {background:	#E9967A;}
+.btn:focus {color:#7CFC00;}
+.txt:focus {background-color:#F0E68C; }
+	
+</style>
+
+<script type="text/javascript">
+
+	function addMember()
+	{
+		alert("확");
+		
+		var str ="";
+		var arr = new Array();
+		var n = 0;
+		
+		do
+		{
+			// ※ prompt() 대화창을 통해 입력된 값을 변수 str 에 담아내기
+			str = prompt("이름 전화번호(" + (n+1) + ") : ");
+			
+			//alert(str);
+			
+			//         ---- null 이라는건 취소버튼 누른 것!
+			if (str == null || str == "." || str == " " || str =="")
+				break;
+			
+			arr[n] = str;
+			n++;
+			
+			
+		} while (true);
+		
+		document.getElementById("txtCount").value = arr.length;
+		
+		document.getElementById("txtResult").value = "	이름		전화번호	\n";
+		for (var n = 0; n < arr.length; n++)
+		{
+			document.getElementById("txtResult").value += arr[n] + "\n";
+		}
+		
+		
+	}
+	
+</script>
+
+</head>
+<body>
+
+<!--  
+	여러 명의 이름과 전화번호를 입력받고
+	그 내용을 전체 출력하는 페이지를 구성한다.
+	HTML, CSS, Javascript 를 활용한다.
+	
+	※ prompt() 활용.
+	
+	페이지 레이아웃
+	--------------------------------------------
+	< 회원 정보 입력 >
+	
+	전체 회원 수 : [   ] 명
+	-----------------------
+	  이름		전화번호
+	-----------------------
+			:
+	--------------------------------------------
+-->
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<input type="button" value="회원 정보 입력" class="btn" onclick="addMember()">
+		<br><br>
+		전체 회원수
+		<input type="text" class="txt" readonly="readonly" style="width: 20px" id="txtCount">명
+		<br><br>
+		<textarea rows="10" cols="30" id="txtResult" readonly="readonly"></textarea>
+		
+	</form>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

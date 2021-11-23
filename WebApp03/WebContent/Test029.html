@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test029.html</title>
+
+<style type="text/css">
+	* {color: #223322; font-family: 맑은 고딕; font-weight: bold; /* text-align: center; */}
+	.btn {width: 100px; height: 40px; font-size: 20px;}
+</style>
+
+<script type="text/javascript">
+
+	function actionChoice()
+	{
+		//확인
+		//alert("췍 버튼");
+		
+		var checkObj = document.getElementsByName("checkGroup");
+		var msg="";
+		var flag = true;
+		
+		// 확인
+		//alert(checkObj);
+		//--==>> [object NodeList] → 자바스크립트 배열임
+		//alert(checkObj.length);
+		//--==>> 6
+		
+		for (var i = 0; i < checkObj.length; i++)	// 0 1 2 3 4 5
+		{
+			// 확인
+			//alert(checkObj[i].checked);		// true false 값 나옴
+			
+			if(checkObj[i].checked)
+			{
+				msg += checkObj[i].value + " ";
+				flag = false;	// 여기서는 break를 쓸 수 없기 때문에 (앞에 체크되어있고 뒤에도 체크되어있을 수 있는 체크박스니까)
+			}
+			
+		}
+		
+		if (flag)	// 여기왔다는건(flag가 false) 체크된게 없다는 뜻
+		{
+			msg = "선택한 과목이 없습니다.";
+			alert(msg);
+		}
+		else
+			alert(msg);
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>라디오 버튼, 체크박스 다루기</h2>
+	<h3>name 통일해야함~!! 질문하나에 동일한답변을 받기 위해~</h3>
+	
+	<form>
+		--- 과목 선택 --- <br><br>
+		<input type="checkbox" name="checkGroup" id="a" value="자바기초"><label for="a">Java Beginning</label><br>
+		<input type="checkbox" name="checkGroup" id="b" value="오라클"><label for="b">Oracle</label><br>
+		<input type="checkbox" name="checkGroup" id="c" value="자바심화"><label for="c">Java Advanced</label><br>
+		<input type="checkbox" name="checkGroup" id="d" value="웹클라이언트"><label for="d">Web Client</label><br>
+		<input type="checkbox" name="checkGroup" id="e" value="웹APP서버"><label for="e">JSP/Servlet</label><br>
+		<input type="checkbox" name="checkGroup" id="f" value="프레임워크"><label for="f">FramWork</label><br>
+		<br><br>
+		<button type="button" class=btn onclick="actionChoice()">선택완료</button>
+		
+	</form>
+</div>
+
+</body>
+</html>

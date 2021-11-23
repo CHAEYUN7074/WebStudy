@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test019.html</title>
+</head>
+<body>
+
+<div>
+	<h1>체크박스 만들기</h1>
+	<hr>
+	
+</div>
+<div>
+	<form>
+		<p>오늘 저녁으로 먹고싶은 메뉴는?</p>
+		
+		<!-- 방법1(붙여놓고 작업할 때 유용) : label -->
+		<label>
+			<input type="checkbox" name="foodCheck" value="1">밥
+		</label>
+		
+		<!-- 방법2(떨어져있을 때 유용) 김치처럼 : label 의 for -->
+		<input type="checkbox" name="foodCheck" value="2" id="label2">
+		<label for="label2">미역국</label>
+		
+		<input type="checkbox" name="foodCheck" value="3">김치찌게
+		<input type="checkbox" name="foodCheck" value="4">계란말이
+		<input type="checkbox" name="foodCheck" value="5">장조림
+		<input type="checkbox" name="foodCheck" value="6">김
+		
+		<!-- 디폴트로 체크하는 법 : checked -->
+		<input type="checkbox" name="foodCheck" value="7" checked="checked">멸치볶음
+		
+		
+		<input type="checkbox" name="foodCheck" value="8" id="label8">
+		
+		
+		<input type="text">
+		
+		<br><br><br><br>
+		<label for="label8">김치</label>
+		
+	</form>
+	
+</div>
+
+</body>
+</html>

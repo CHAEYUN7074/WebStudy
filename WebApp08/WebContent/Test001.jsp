@@ -1,4 +1,4 @@
-<%@page import="com.util.DBConn" %>
+<%@page import="com.svt.DBConn" %>
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%

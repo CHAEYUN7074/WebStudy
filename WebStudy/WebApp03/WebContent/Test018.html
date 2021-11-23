@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test018.html</title>
+<style type="text/css">
+
+	* {font-size: 20px; font-weight: bold;}
+	span.title
+	{
+		float: left;
+		font-weight: bold;
+	}
+	.txt {text-align: right;}
+	
+	input:focus { background-color: #eeaddd;}	
+	input.btn:hover{color: teal;}
+	p {display: inline-block;}
+	
+	
+</style>
+
+<script type="text/javascript">
+	
+	function actionPerformed()
+	{
+		//alert("확인");
+		var name = document.getElementById("name").value;
+		var kor = parseInt(document.getElementById("kor").value);
+		var eng = parseInt(document.getElementById("eng").value);
+		var mat = parseInt(document.getElementById("mat").value);
+		
+		var nTot= 0;
+		var nAvg = 0;
+		var panStr = "";
+		
+		nTot = kor + eng + mat
+		//확인
+		//alter(nTot);
+		nAvg = Math.round(nTot/3);
+		document.getElementById("avg").value = nAvg;
+		 
+		if (nAvg>=60 && kor>=40 && eng>=40 && mat>=40)
+			panStr="합격"; 
+		else if(nAvg>=60)
+			panStr="과락";
+		else 
+			panStr="불합격"
+			
+		document.getElementById("pan").value = panStr;
+		
+	}
+	
+	 
+	/*  
+	function actionPerformed()
+	{
+		//alert("확인");
+		var name = document.getElementById("name").value;
+		var kor = parseInt(document.getElementById("kor").value);
+		var eng = parseInt(document.getElementById("eng").value);
+		var mat = parseInt(document.getElementById("mat").value);
+
+		
+		var avg = Math.round((kor + eng + mat)/3);
+		document.getElementById("avg").value = avg;
+		
+		var pan = "";
+		 
+		if (avg>=60 && kor>=40 && eng>=40 && mat>=40)				// && 기호 잘 확인!!!!!!!
+		{
+			document.getElementById("pan").value = "합격";
+		} 
+		else if(avg>=60 && (kor<40 || eng<40 || mat<40))
+		{
+			document.getElementById("pan").value = "과락";
+		}
+		else if(avg<60)
+		{
+			document.getElementById("pan").value = "불합격";
+		}
+		 
+		
+	}
+	 */
+</script>
+
+</head>
+<body>
+<!-- 
+	사용자로부터 이름, 국어점수, 영어점수, 수학점수를 입력받아
+	평균점수와 판정결과를 출력하는 페이지를 구성한다.
+	판정결과는 합격, 과락, 불합격 중 하나로 처리한다.
+	
+	합격은 모든 과목 점수가 40점 이상이면서 평균 60점 이상인 경우
+	과락은 평균 60점 이상이지만 한 과목이라도 과목 점수가 40점 미만의 과목이 존재하는 경우
+	불합격은 평균이 60점 미만인 경우로 처리한다.
+	
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃
+	-----------------------------------------------------
+	이름     [        ]
+	국어점수 [        ]
+	영어점수 [        ]
+	수학점수 [        ]
+	
+	< 처리결과확인 >
+	
+	평균		판정결과
+	[      ]	[      ]
+	
+	------------------------------------------------------
+-->
+
+<div>
+	<h1>점수 판정 페이지</h1>
+</div>
+
+<div>
+	<form>
+		<hr>
+			<span style="display:inline-block; width:100px;" class="title">이름</span>
+			<input type="text" class="txt" id="name" style="width:100px;"><br>
+			
+			<span style="display:inline-block; width:100px;"  class="title">국어점수</span>
+			<input type="text" class="txt" id="kor" style="width: 100px;"><br>
+			
+			<span style="display:inline-block; width:100px;" class="title">영어점수</span>
+			<input type="text" class="txt" id="eng" style="width: 100px;"><br>
+			
+			<span style="display:inline-block; width:100px;" class="title">수학점수</span>
+			<input type="text" class="txt" id="mat" style="width: 100px;"><br>
+			<br>
+			
+			<input type="button" class="btn" value="처리결과확인" style="width:200px;" onclick="actionPerformed()">
+			<br>
+			
+			<p>평균<br><input type="text" class="txt1" id="avg" style="width: 100px;" disabled="disabled"></p>
+			<p>판정결과<br><input type="text" class="txt1" id="pan" style="width: 100px;" disabled="disabled"></p>
+			
+			
+		<hr>
+	</form>
+</div>
+
+
+</body>
+</html>

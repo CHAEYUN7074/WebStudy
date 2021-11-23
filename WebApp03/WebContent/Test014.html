@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test014.html</title>
+
+<script type="text/javascript">
+<!-- // why? 주석처리 -> 예전코딩이긴하지만 자바스크립트가 안돌아가느 브라우저가있다면 이거에 의한 오류 없애기 위해!
+
+	// msg 변수 → 함수 밖에 선언 → 모든 함수에서 접근 가능한 전역 변수
+	var msg = "2021년 10월의 한 가운데에서...";
+	//-- 『var』 키워드 사용 여부와 관계없이 전역 변수의 형태로 기능하는 상황
+
+	function buttonOnclick1()
+	{
+		//alert("첫 번째 버튼 클릭");
+		
+		alert(msg);
+		
+		
+		
+		// var 키워드 포함 → name 변수 → 함수 내부에 선언 → 지역 변수
+		//var name = "송해덕";
+		
+
+		// var 키워드 생략 → name 변수 → 함수 내부에 선언 → ★상황에 따른 지역/전역 변수★
+		// 위치는 지역변수 영역인데 밑에 함수 name 에도 나옴!? no! 상황에 따라 다름
+		// 이 함수가 실행되었으면 2에서도 name 쓸수있고 이함수실행안하고 2먼저 수행되면 name 없음!
+		name = "김진희";		
+		document.write("이름 : " + name);
+	}
+	
+	function buttonOnclick2()
+	{
+		//alert("두 번째 버튼 클릭");
+		
+		alert(msg);
+		
+		document.write("이름 : " + name);
+	}
+//-->
+</script>
+
+<noscript>
+	자바스크립트가 사용되지 못할 경우 표현되는 영역
+</noscript>
+
+</head>
+<body>
+
+<!-- onclick 이벤트 넣어야 버튼 클릭했을 때 작동함! -->
+<input type="button" id="button1" value="Button" onclick="buttonOnclick1()"><br>
+<input type="button" id="button2" value="Button" onclick="buttonOnclick2()">
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

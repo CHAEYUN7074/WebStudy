@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test025.html</title>
+
+<style type="text/css">
+	* 
+	{
+		background-color: antique white; 
+		font-weight: bold; 
+		font-family: "Yu Gothic"; 
+		text-align: center;
+	}
+    input { border-radius: 20px; width: 40px; height: 30px;}
+    input:focus { background-color: #FFEFD5;}
+    .btn:hover {color: #FFD700;}
+    .btn
+    {
+        background-color:#FFE4E1 ;
+        color: #708090;
+        border-radius: 20px;
+        width: 300px; height: 35px;
+        font-size: 16px;
+    }
+	form {font-size:18px;}
+    table 
+    { 
+    	margin: auto; 
+    	background-color: linear-gradient( 45deg, whtie,#FFFACD); 
+    	color:#708090;
+    	width: 400px; 
+    	height: 50px; 
+    	border-radius: 6px;
+    }
+    tr {background-color: #E6E6FA;}
+    td { background-color: #F0F8FF; }	
+</style>
+
+<script type="text/javascript">
+
+	/* 
+	○ 문제 분석 및 접근
+	- 서기 1년 1월 1일 : 월요일
+	- 연도가 4의 배수이면서 100의 배수가 아니거나,
+	  400의 배수이면 2월은 29일(윤년),
+	  나머지는 2월 28일(평년)
+	- 만약 2021년 8월 달력을 그린다고 가정하면
+	  1.1.1 ~ 2021.7.31 까지의 날 수를 구한다.
+	  그 날 수에 『+1』 연산을 수행하면... (1.1.1 ~ 2021.8.1) 날 수 확인
+	  이 날 수를 통해 2021년 8월 1일의 요일 확인
+	  ★ 자바에서 1월은 0이기 때문에 month-1 ★
+	*/
+	
+	//연도가 4의 배수이면서 100의 배수가 아니거나,400의 배수이면 2월은 29일(윤년)
+	
+	function draw()
+	{
+		var year = document.getElementById("txtYear").value;
+		var month = document.getElementById("txtMonth").value;
+
+
+		
+		// 입력받은 년도에 해당하는 2월의 마지막 날 계산
+		var lastDay = m[month-1];
+		
+		if(month==2 && Math.floor(year%4)==0 && Math.floor(year%100)!=0 || Math.floor(year%400)==0)
+		{
+			lastDay = 29;
+		}
+		
+		// lastDay 확인
+		//alert(lastDay);
+		
+		//1. 1년 1월 1일부터 입력받은 해당년도의 전년도 12월 31일까지의 날 수
+		var nal = (year-1)*365 + Math.floor((year-1)/4) - Math.floor((year-1)/100) + Math.floor((year-1)/400);
+
+		
+		//2. 입력받은 월의 이전 월까지의 날 수 계산 후 이 계산 결과를 1번의 결과에 더하는 연산
+		for (var i = 0; i < (month-1); i++)
+		{
+			nal += Number(m[i]);
+		}
+		
+		
+		//3. 입력받은 월의 1일의 날수를 더하기 연산
+		nal += 1;
+		
+		// nal 확인
+		//alert(nal);
+		
+		
+		//4. 요일 산출
+		var day = nal%7;	// 0:일요일 1:월요일....
+		
+		// 요일 확인
+		//alert(day);
+		
+		//------------- 이 다음부터 출력
+		
+		// table 엘리먼트에 접근
+		var tableNode = document.getElementById("calendarTbl");
+		var trNode = document.getElementById("tr");				// <tr></tr>
+		
+		//5. 해달월 앞에 빈 공백 찍기
+		if(day != 6)
+			for(var i=0; i<day; i++)
+			{
+				trNode.appendChild(tdNode(" "));
+				tableNode.appendChild(trNode);
+			}
+			
+		
+		//6. 해당월(입력한 월)의 날짜들이 출력될 수 있도록 반복문 구성
+		for (var i = 1; i < lastDay; i++)
+		{			
+			if((i+day)%7==0)
+			{
+				var trNode = document.createElement("tr");
+			}
+			trNode.appendChild(tdNode(i));
+			tableNode.appendChild(trNode);			
+			
+		}
+		
+		
+		function tdNode(val)
+		{
+			var textNode = document.createTextNode(val);
+			var tdNode = document.createElement(td);
+			tdNode.appendChild(textNode);
+			return tdNode;
+		}
+
+	
+	}
+
+
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<h1>테이블 동적 생성으로 만년달력 그리기(나의 풀이)</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<input type="text" id="txtYear" class="txt" >년
+		<input type="text" id="txtMonth" class="txt">월
+		<br><br>
+		
+		<button type="button" class="btn" onclick="draw()">만년달력 그리기</button>
+		<br><br>
+		
+		<table border="1" id="calendarTbl">
+			<tr>
+				<th>일</th>
+				<th>월</th>
+				<th>화</th>
+				<th>수</th>
+				<th>목</th>
+				<th>금</th>
+				<th>토</th>
+			</tr>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

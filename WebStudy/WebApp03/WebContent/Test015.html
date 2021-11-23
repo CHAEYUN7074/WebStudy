@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test015.html</title>
+
+<style type="text/css">
+	input.box:focus 
+	{
+		background-color: yellow;
+	}
+	input.boxSu
+	{
+		width: 50px;
+	}
+</style>
+
+<script type="text/javascript">
+
+	function btnAonclick()
+	{
+		//alert("A버튼 클릭~!!!");
+		//alert(document.getElementById("txtLeft"));
+		//alert(document.getElementById("txtLeft").value);
+		
+		var txt01 = document.getElementById("txtLeft");
+		var txt02 = document.getElementById("txtRight");
+		
+		var leftStr = txt01.value;
+		// var leftStr = document.getElementById("txtLeft").value;
+		txt02.value = leftStr;
+	}
+	
+	function btnBonclick()
+	{
+		//alert("B버튼 클릭~!!!");
+		var txt01 = document.getElementById("txtLeft");
+		var txt02 = document.getElementById("txtRight");
+		var rightStr = txt02.value;
+		txt01.value = rightStr;
+	}
+	
+	function btnResultonclick()
+	{
+		//alert("버튼 클릭~!!!");
+		var num1 = document.getElementById("txtSu1").value;
+		var num2 = document.getElementById("txtSu2").value;
+		
+		//var result = document.getElementById("txtResult");
+		
+		// 문자열 + 문자열 = 문자열 결합
+		//result.value = num1 + num2;
+		
+		// 문자열끼리 결함된걸 숫자로 바꾼 것!
+		//result.value = parseInt(num1 + num2);
+		
+		//result.value = parseInt(num1) + parseInt(num2);
+		
+		//var result = parseInt(num1) + parseInt(num2);		// 내장 함수
+		//					  "12"				"23"
+		//			 -------------    -------------
+		//				   12				23
+		//이렇게 해도 됨!
+		
+		var result = Number(num1) + Number(num2);			// 생성자 함수 :  숫자 형식의 객체로 바꾼 것
+		
+		document.getElementById("txtResult").value = result;
+		
+		// 한 줄로 정리한 것!		
+		// document.getElementById("txtResult").value = parseInt(document.getElementById("txtSu1").value) + parseInt(document.getElementById("txtSu2").value);
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<br>
+	<input type="text" class="box" id="txtLeft">
+	<input type="button" value="A버튼" class="btn" id="btnA" onclick="btnAonclick()">
+	<input type="button" value="B버튼" class="btn" id="btnB" onclick="btnBonclick()">
+	<input type="text" class="box" id="txtRight">
+	<hr>
+	<input type="text" class="boxSu" id="txtSu1">
+	+
+	<input type="text" class="boxSu" id="txtSu2">
+	<input type="button" value=" = " class="btn" id="btnResult" onclick="btnResultonclick()">
+	<input type="text" class="boxSu" id="txtResult">
+</div>
+
+
+
+</body>
+</html>

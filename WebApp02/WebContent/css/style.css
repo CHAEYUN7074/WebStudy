@@ -1,0 +1,148 @@
+html, body 
+{
+
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%
+
+}
+
+.wrap
+{
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 19px; /* footer height */
+}
+
+.footer 
+{
+
+    position: absolute;
+    left: 0;
+    right:0;
+    bottom: 0;
+    width: 100%;
+	padding: 15px 0;
+	text-align: center;
+	color: white;
+	background: lightblue;
+
+}
+
+
+
+.nav
+{
+	height: 100px; 
+	align-items:center;	
+	margin-right: 25%;
+	text-align: right; 
+}
+
+a:active{color: yellow;}
+a:hover {color: white; background-color: purple;}
+
+body
+{	
+	/* background:gray; */
+	background: linear-gradient(180deg, white, lightblue);
+	/* background-color: #e1f2f7; */
+
+}
+
+
+.wrap
+{
+	align-items:center;	
+	/* height: 900px;
+	width: 80%;
+	padding: 5%; */
+}
+
+/* .leftbar
+{
+	float: left;
+	width: 15%;
+	height: 800px;
+	left: 30%;
+} */
+
+header
+{
+	float: right;
+	margin-right: 30%;
+	
+}
+
+.pic
+{
+	margin-left : 28%
+}
+
+h1 
+{ 
+	font-size: 3.8rem; 
+	font-family: "Californian FB";
+}
+
+.headsub
+{
+	font-style: italic;
+	font-size: 2rem;
+	margin: 0;
+}
+
+
+
+.profile1
+{
+	/* width: 50%; */
+	float: right;
+	margin-right: 60%;
+	margin-top: 5%;
+}
+
+.profile2
+{
+	/* width: 50%; */
+	float: left;
+	margin-left: 55%;
+	margin-top: -35%;
+}
+
+h5.list
+{
+	font-size:30pt;
+	margin: 0;
+}
+
+li.list
+{
+	font-size: 2rem;
+	padding: 10px;
+	margin: 0;
+}
+
+ul li
+{
+	display: block;
+	padding: 5px;
+	margin:0;
+	font-size: 1.0rem;
+	font-family:'맑은 고딕';
+}
+
+.line
+{
+	
+	font-size: 1.2rem;
+	line-height: 25pt;
+}
+
+
+
+
+
+
+

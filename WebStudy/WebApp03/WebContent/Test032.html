@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test032.html</title>
+
+<style type="text/css">
+* {font-family: 맑은 고딕; font-weight: bold;}
+form {font-size: 17px; background:#FFD700;}
+.btn{margin-left:60px; width: 200px; font-weight: bold; font-size: 17px;}
+input {border-radius: 20px; width: 200px; text-align: center; font-size: 16px;}
+.span {text-align:center; width: 80px;  }
+
+.btn:hover {background:	#E9967A;}
+.btn:focus {color:#7CFC00;}
+.txt:focus {background-color:#F0E68C; }
+	
+</style>
+
+<script type="text/javascript">
+
+	function searchAddr()
+	{
+		//alert("확");
+		
+		window.open("Test033.html","test","width=500, height=300");		// 이 형태로 새창을 열겠다.
+		
+	}
+
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>주소검색</h2>
+	
+	<form>
+		기본주소 <input type="text" id="addr1" readonly="readonly" class="txt">
+		<input type="button" value="검색" class="btn" onclick="searchAddr()">
+		<br><br>
+		
+		상세주소 <input type="text"  id="addr2" class="txt">
+		<br><br>
+		
+		<span id="txt1" style="color:red; font-weight: bold; ">볼 수 있도록 처리</span>
+		
+	</form>
+</div>
+
+</body>
+</html>

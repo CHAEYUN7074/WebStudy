@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test023.html</title>
+
+<style type="text/css">
+* {font-family: 맑은 고딕; font-weight: bold;}
+form {font-size: 20px; font-weight: bold; background:#FFD700;}
+.btn{margin-left:60px; width: 300px; font-weight: bold; font-size: 20px; background-color:#F0E68C;}
+input {border-radius: 20px; width: 200px; text-align: center; font-size: 16px; background-color:#20B2AA}
+.span {text-align:center; width: 80px;  }
+
+.btn:hover {background:	#E9967A;}
+.btn:focus {color:#7CFC00;}
+.txt:focus {background-color:#F0E68C;}
+textarea {margin-left: 50px; border-radius: 15px; background-color:#E9967A;}
+span {margin-left: 180px;}
+
+</style>
+
+<script type="text/javascript">
+
+	function actionScore()
+	{
+		// 확인
+		//alert("함수 호출 확인~!!!");
+		
+		var str = "";
+		// 배열 안에 새로운 배열 6개 만들기
+		var arr = new Array(new Array(), 					new Array(), new Array(), new Array(), new Array(), new Array());
+		//					----------						-----------	 -----------  ----------   ----------   -----------
+		//					이름들							국어점수들	 영어점수들   수학점수들    총점들       등수들
+		// ★이런 구조로 만들어야함!!!!★
+		//					----------						-----------
+		//					이름,국어,영어,수학,총점,등수    이름,국어,영어,수학,총점,등수
+		// 이렇게 만들었을 시 문제점? → 6명 학생 배열 담으면 끝남!
+		
+		var n = 0;
+		
+		do
+		{
+			str = prompt("이름 국어 영어 수학 (" + (n+1) + ") : ");
+			
+			if(str==null || str=="" || str==" " || str==".")
+				break;
+			
+			var member = str.split(" ");		// var member = ["정효진", "90", "80", "70"];
+			
+			arr[0][n] = member[0];														// member[0] → 이름데이터
+			arr[1][n] = member[1];														// member[1] → 국어데이터
+			arr[2][n] = member[2];														// member[2] → 영어데이터
+			arr[3][n] = member[3];														// member[3] → 수학데이터
+			arr[4][n] = Number(member[1]) + Number(member[2]) + Number(member[3]);		// member[4] → 총점데이터
+			arr[5][n] = 1;												// ★check~!!!★   member[5] → 등수데이터
+			
+			// 확인
+			//alert(arr[4][n]); 총점
+			//alert(arr[5][n]); 1 찍히면 됨!
+			
+			n++;
+			
+			
+		} while (true);
+		
+		// 석차(등수) 계산
+		for (var i=0; i<arr[0].length; i++)		//arr.length(X)
+		{
+			for(var j=0; j<arr[0].length; j++)
+			{
+				if(i==j)
+				{
+					continue;
+				}
+				
+				if(Number(arr[4][i]) < Number(arr[4][j]))		// 총점 비교		//
+				{																	//	
+					// i 번째 학생의 등수(arr[5][i]) 를 1만큼 증가					// continue 기준 뒷부분
+					arr[5][i] = (Number(arr[5][i]) + 1).toString();					//
+				}																	//
+			}
+		}
+		
+		//------------ 여기까지 수행하면 arr 배열 구성 끝~!!!
+		
+		var result = "";
+		
+		for(var j=0; j<arr[0].length; j++)
+		{
+			for (var k = 0; k < arr.length; k++)		// arr.length check~!!
+			{
+				//alert(k + " " + j);
+				result += arr[k][j] + " ";
+			}
+			result += "\n";
+			
+		}
+
+		document.getElementById("txtCount").value = arr[0].length;
+		
+		document.getElementById("memberList").value = "이름    국어   영어   수학   총점   등수\n";
+		document.getElementById("memberList").value += result;
+		
+	}
+
+	/* 
+	function addGrade()
+	{
+		//alert("확");
+		var str ="";
+		var arr = new Array();
+		var n = 0;
+		
+		do
+		{
+			// ※ prompt() 대화창을 통해 입력된 값을 변수 str 에 담아내기
+			str = prompt("이름 국어 영어 수학 (" + (n+1) + ") : ");
+			
+			if(str==null || str=="" || str==" " || str==".")
+				break;
+			arr[n]=str;
+			n++;
+						
+		} while (true);
+		
+		var tot = 0;
+		tot = 
+		
+		document.getElementById("txtCount") = arr.length;
+		
+		document.getElementById("txtResult").value = "이름   국어   영어   수학   총점   등수\n";
+		for (var n = 0; n < arr.length; n++)
+		{
+			document.getElementById("txtResult").value += arr[n] + "\n";
+		}
+		
+	}
+	 */
+
+</script>
+
+</head>
+<body>
+
+<!--  
+	『prompt()』 를 활용하여 여러 명의 성적 데이터를 입력받고,
+	등수를 부여하여, 리스트를 출력하는 페이지를 구성한다.
+	HTML, CSS, Javascript 활용.
+	
+	페이지 레이아웃
+	--------------------------------------------------------- prompt()
+	< 성적 정보 입력 > →→→→→→→→→→→→→→→→→→→→→→ 이름 국어 영어 수학(1) : 
+	
+	전체 인원수  : [   ] 명
+	---------------------------------------
+	이름   국어   영어   수학   총점   등수
+	이중호   90	    80	  70     xxx	1등
+	채지윤   90	    80	  70     xxx	2등
+	최수지   90	    80	  70     xxx	3등
+	---------------------------------------
+	
+	
+	----------------------------------------------------------
+-->
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<hr>
+			<input type="button" class="btn" value="성적 정보 입력" onclick="actionScore()">
+			<br><br>
+			<span>전체 인원수 : <input type="text" class="txt" id="txtCount" style="width: 20px" readonly="readonly"> 명</span>
+			<br><br>
+			<textarea rows="15" cols="40" id="memberList" readonly="readonly"></textarea>
+ 		<hr>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest01.html</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+	$(function()
+	{
+		var d=300;
+		
+		$("#navigation a").each(function()
+		{
+			$(this).stop().animate({"marginTop":"-80px"}, d+=150);
+		});
+		
+		$("#navigation > li").hover(function()
+		{
+			$("a", $(this)).stop().animate({"marginTop":"-2px"}, 600);
+		}, function()
+		{
+			$("a", $(this)).stop().animate({"marginTop":"-80px"}, 600);
+		});
+	});
+
+	/* $("a", $(this) 마우스가 올라간 그것!! 을 의미 */
+</script>
+
+
+
+</head>
+<body>
+
+<table>
+	<tr>
+		<td>
+			<ul id="navigation">
+				<li class="home"><a href="#">Home<span></span></a></li>
+				<li class="about"><a href="#">About<span></span></a></li>
+				<li class="search"><a href="#">Search<span></span></a></li>
+				<li class="photos"><a href="#">Photos<span></span></a></li>
+				<li class="rssfeed"><a href="#">Rss feed<span></span></a></li>
+				<li class="podcasts"><a href="#">Podcasts<span></span></a></li>
+				<li class="contact"><a href="#">Contact<span></span></a></li>
+		
+			</ul>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test016.html</title>
+
+<style type="text/css">
+	* {color: #223322;}
+	input
+	{
+		font-family: 나눔코딕코딩;
+		font-weight: bold;
+	}
+	input:focus 
+	{
+		background-color: #eeeedd;
+	}
+	input.btn
+	{
+		width: 80px;
+		font-weight:  bold;
+		font-family: 맑은 고딕;
+	}
+	input.btn:hover
+	{
+		color : orange;
+	}
+	input.btn:active
+	{
+		color: red;
+	}
+	
+</style>
+
+<script type="text/javascript">
+
+	/*  함수 하나로 만들기!
+	function test1()
+	{
+		alert("덧셈 연산 수행")
+		document.getElementById("result").value 
+		= parseInt(document.getElementById("num1").value) + parseInt(document.getElementById("num2").value);
+	}
+	
+	function test2()
+	{
+		alert("뺄셈 연산 수행")
+		document.getElementById("result").value
+		= parseInt(document.getElementById("num1").value) - parseInt(document.getElementById("num2").value);
+	}
+	
+	function test3()
+	{
+		alert("곱셈 연산 수행")
+		document.getElementById("result").value
+		= parseInt(document.getElementById("num1").value) * parseInt(document.getElementById("num2").value);
+	}
+	
+	function test4()
+	{
+		alert("나눗셈 연산 수행")
+		document.getElementById("result").value
+		= parseInt(document.getElementById("num1").value) / parseInt(document.getElementById("num2").value);
+	} 
+	*/
+	
+	function test(obj)
+	{
+		//alert(obj);		// onclick="test(this.value)" 했을 때
+		//alert(obj.value);	// onclick="test(this)" 했을 때
+		
+		
+		var vNum1 = document.getElementById("num1").value;
+		var vNum2 = document.getElementById("num2").value;
+		var vResult = 0;
+		
+		if (obj.value == "더하기")
+		{
+			//alert("덧셈 연산 수행");
+			vResult = parseInt(vNum1) + parseInt(vNum2);
+		}
+		else if(obj.value == "빼기")
+		{
+			//alert("뺄셈 연산 수행");
+			vResult = parseInt(vNum1) - parseInt(vNum2);
+		}
+		else if(obj.value == "곱하기")
+		{
+			//alert("곱셈 연산 수행");
+			vResult = parseInt(vNum1) * parseInt(vNum2);
+		}
+		else if(obj.value == "나누기")
+		{
+			//alert("나눗셈 연산 수행");
+			vResult = parseInt(vNum1) / parseInt(vNum2);
+		}
+		
+		document.getElementById("result").value = vResult;
+		
+	}
+	
+
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<p>두 개의 정수를 입력받고</p>
+	<p>합, 차, 곱, 몫을 연산하여 연산 결과를 출력할 수 있도록 한다.</p>
+	<p>HTML, CSS, Javascript 를 활용하여 처리한다.</p>
+</div>
+
+<div>
+	<form>
+		정수1 <input type="text" id="num1" style="width: 80px;">
+		정수2 <input type="text" id="num2" style="width: 80px;">
+		<br><br>
+		
+		<input type="button" class="btn" value="더하기" onclick="test(this)"> <!-- 여기서의 this 는 버튼 객체 자체 -->
+		<input type="button" class="btn" value="빼기" onclick="test(this)">
+		<input type="button" class="btn" value="곱하기" onclick="test(this)">
+		<input type="button" class="btn" value="나누기" onclick="test(this)">
+										      <!-- 홑따옴표 사용 test('효진') -->
+		<br><br>
+		
+		결과 <input type="text" id="result" style="width:80px;" disabled="disabled">
+		<input type="reset" class="btn" value="취소">
+		
+	</form>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

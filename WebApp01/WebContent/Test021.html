@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test021.html</title>
+</head>
+<body>
+
+<div>
+	<h1>전송, 취소 버튼 만들기</h1>
+	<hr>
+</div>
+
+<div>
+	<!-- form에서 가장 중요한 속성 중 하나 : action -->
+	<!-- 데이터 전송 및 페이지 요청 -->
+	<form action="http://localhost:8090/WebApp01/Test022.html">
+		*이름 <input type="text" name="name" size="15" maxlength="8">
+		<br>
+		*이메일 <input type="text" name="email" size="15" maxlength="20">
+		<br>
+		*하고싶은 말<br>
+		<textarea rows="10" cols="50" name="field"></textarea>
+		<br><br>
+		
+		<!-- html에서 서버쪽에 전공하는 유일한 수단 : submit (은 서버쪽에 제출을 한다. 로 이해) -->
+		<input type="submit" value="전송하기" name="submitBtn">
+		
+		<br><br>
+		<input type="button" value="test1">		<!-- button과 submit은 생긴건 같지만 하는 역할을 다르다! -->
+		<input type="reset" value="test2">		<!-- reset은 대체 불가 기능(처음상태로 초기화) -->
+		<input type="submit" value="test3">		<!-- button과 submit은 생긴건 같지만 하는 역할을 다르다! -->
+		<input value="test4">					<!-- input에서 type기재 안하면 textbox로 나오는 구나~!! -->
+		<button>test4</button>					<!-- 버튼에서 type기재 안하면 submit으로 나오는 구나~!! -->
+		
+		<!-- 밑에 두줄 기능 똑같다! -->
+		<button type="button">test4</button>
+		<input type="button" value="test1">
+		
+		<!-- 밑에 세줄 기능 똑같다! -->
+		<button type="submit">test3</button>
+		<input type="submit" value="test4">
+		<button>test5</button>
+		
+		<!-- 기능 같은데 다르게 쓰는 이유는 <button>은 pc데이터에 이미지 넣을 수 있음! -->
+		<button type="button">
+			<img alt="" src="images/btn_02.png">
+		</button>
+		
+		<br><br>
+		
+		
+		<input type="reset" value="다시쓰기">
+	</form>
+	
+</div>
+
+</body>
+</html>

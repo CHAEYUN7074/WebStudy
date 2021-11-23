@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test023.html</title>
+</head>
+<body>
+
+<div>
+	<h1>드롭다운 메뉴(selectbox) 만들기</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<!-- name과 value 작성해야함 농구선택해서 제출하면 selectSport에 val3이 전송됨 -->
+		<p>당신이 가장 좋아하는 운동은?</p>
+		<select name="selectSport">
+			<!-- check~!! 선택하세요!! -->
+			<!--  
+			<option>---- 선택하세요 ----</option>
+			<option value="val1">축구</option>
+			<option value="val2">야구</option>
+			<option value="val3">배구</option>
+			<option value="val3">농구</option>
+			-->
+			
+			<!-- 이 옵션의 경우 사원이 제일 많을 옵션! selected옵션으로 사원을 기본값으로 지정 -->
+			<option value="jikCode1">회장</option>
+			<option value="jikCode2">사장</option>
+			<option value="jikCode3">이장</option>
+			<option value="jikCode4">부장</option>
+			<option value="jikCode5">차장</option>
+			<option value="jikCode6">과장</option>
+			<option value="jikCode7">대리</option>
+			<option value="jikCode8" selected="selected">사원</option>
+			<option value="jikCode9">인턴</option>
+			
+		</select>
+		
+		<br><br>
+		
+		<button type="button">확인</button>
+		<button type="reset">취소</button>
+		
+		<br><br>
+		
+		<p>가고싶은 여행지는? (다중 선택 가능)</p>
+		<select name="trav" multiple="multiple" size="5"> <!-- 리스트 다 보여지도록 옵션5개니까 사이즈도 5 -->
+			<option value="val1">백두산</option>
+			<option value="val2">한라산</option>
+			<option value="val3">지리산</option>
+			<option value="val4">설악산</option>
+			<option value="val5">속리산</option>
+		</select>
+		
+		
+		
+	</form>
+</div>
+
+
+</body>
+</html>
