@@ -1,7 +1,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="com.svt.DBConn"%>
+<%@page import="com.util.DBConn"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <% 
 	// 결과값 변수
