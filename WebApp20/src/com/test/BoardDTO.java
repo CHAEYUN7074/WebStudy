@@ -1,21 +1,6 @@
-/*===================
-	BoardDTO.java
-===================*/
-
-/*
-이름       널?       유형             
--------- -------- -------------- 
-NUM      NOT NULL NUMBER(9)      
-NAME     NOT NULL VARCHAR2(30)   
-PWD      NOT NULL VARCHAR2(20)   
-EMAIL             VARCHAR2(50)   
-SUBJECT  NOT NULL VARCHAR2(100)  
-CONTENT  NOT NULL VARCHAR2(4000) 
-IPADDR            VARCHAR2(20)   
-HITCOUNT NOT NULL NUMBER         
-CREATED  NOT NULL DATE           
- 
-*/
+/*=========================
+  	   BoardDTO.java
+==========================*/
 
 package com.test;
 
