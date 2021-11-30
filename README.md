@@ -1,10 +1,9 @@
 # WebStudy
 WebStuday-HTML-CSS-JavaScript
-📝 HTML/CSS/JavaScript 공부한 것을 복습하며 정리
-🌟 유용한 사이트
+📝 
 → https://www.w3schools.com/default.asp
 → http://koxo.com/
-
+-------------------------------------------------------------------------------
 ▪ HTML → WebApp01
 HTML 개념
 HTML 태그 및 기능
