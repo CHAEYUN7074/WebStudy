@@ -5,7 +5,7 @@ WebStuday-HTML-CSS-JavaScript
 → http://koxo.com/
 
 <hr />
-▪ HTML → WebApp01
+<h3>▪ HTML → WebApp01</h3>
 HTML 개념
 HTML 태그 및 기능
 (기본 태그/목록태그/바디태그에 관한 속성/데이터 입력 관련 태그/
