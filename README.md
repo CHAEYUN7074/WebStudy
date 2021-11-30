@@ -18,12 +18,6 @@ HTML 태그 및 기능
 <ul>
   <li>CSS 개념</li>
   <li>CSS 태그 및 기능</li>
-  <select name='fruits'>
-    <option value='' selected>-- 선택 --</option>
-    <option value='http://www.naver.com'>사과</option>
-    <option value='banana'>바나나</option>
-    <option value='lemon'>레몬</option>
-</select>
 (CSS 구성/(html태그,class,id,문장구조)선택자 활용/엘리먼트에 스타일 직접 적용/
 외부 스타일 적용(,import 적용 방식)/스타일 적용의 우선순위 규칙/
 스타일시트의 상속성/동적 선택자(가상 선택자, 가상 클래스, 상태 선택자)/
