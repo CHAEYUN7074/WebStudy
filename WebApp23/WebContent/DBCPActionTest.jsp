@@ -1,5 +1,5 @@
 <%@page import="java.sql.Connection"%>
-<%@page import="com.svt.DBCPConn"%>
+<%@page import="com.util.DBCPConn"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%	

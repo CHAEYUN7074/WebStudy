@@ -2,7 +2,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
-<jsp:useBean id="ob" class="com.test.ajax.GuestDTO" scope="page"></jsp:useBean>
+<jsp:useBean id="ob" class="com.test.GuestDTO" scope="page"></jsp:useBean>
 <jsp:setProperty property="*" name="ob" />
 
 <!DOCTYPE html>

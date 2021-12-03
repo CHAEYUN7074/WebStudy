@@ -4,20 +4,22 @@
 <meta charset="UTF-8">
 <title>JQTest01.html</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- html 먼저 보여주는게 사용자한테 좋기 때문에 body에 쓰는게 좋다 -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script type="text/javascript">
 
 	$(function()
 	{
-		var d=300;
+		var d=300; //d??
 		
 		$("#navigation a").each(function()
 		{
 			$(this).stop().animate({"marginTop":"-80px"}, d+=150);
+			                       //이걸                 //이렇게
 		});
 		
-		$("#navigation > li").hover(function()
+		$("#navigation > li").hover(function() //#navigation 요소에서 직계 자손인 <li> 요소만 선택한다.
 		{
 			$("a", $(this)).stop().animate({"marginTop":"-2px"}, 600);
 		}, function()

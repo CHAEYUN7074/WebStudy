@@ -1,6 +1,6 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Statement"%>
-<%@page import="com.svt.DBConn"%>
+<%@page import="com.util.DBConn"%>
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%

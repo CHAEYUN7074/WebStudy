@@ -1,4 +1,4 @@
-<%@page import="com.test.ajax.Calc"%>
+<%@page import="com.test.Calc"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
 	// Calc.jsp 페이지로부터 데이터 수신

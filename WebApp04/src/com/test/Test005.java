@@ -99,12 +99,8 @@ public class Test005 extends HttpServlet
 		out.print("</div>");
 		out.print("</body>");
 		out.print("</html>");
-
-		
-		
-		
-	}
 	
+	}
 	
 }
 

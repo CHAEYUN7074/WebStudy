@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<jsp:useBean id="ob" class="com.test.ajax.FriendDTO" scope="page"></jsp:useBean>
+<jsp:useBean id="ob" class="com.test.FriendDTO" scope="page"></jsp:useBean>
 <jsp:setProperty property="*" name="ob" />
 
 <!-- 반복문 필요(다중 선택으로 넘어온 결과값 출력) -->

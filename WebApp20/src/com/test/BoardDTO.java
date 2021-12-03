@@ -1,6 +1,6 @@
-/*=========================
-  	   BoardDTO.java
-==========================*/
+/*=================
+	BoardDTO.java
+===================*/
 
 package com.test;
 
@@ -10,6 +10,7 @@ public class BoardDTO
 	private int num;
 	private String name, pwd, email, subject, content, ipAddr, created;
 	private int hitCount;
+	
 	
 	// 사용자 정의 생성자를 정의하지 않음
 	// → default 생성자 자동 삽입
@@ -87,6 +88,5 @@ public class BoardDTO
 	{
 		this.hitCount = hitCount;
 	}
-	
 	
 }

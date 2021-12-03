@@ -27,7 +27,7 @@
 	
 	$(document).ready(function()
 	{
-		// 키보드 관련 이벤트 
+		//키보드 관련 이벤트 
 		//$("textarea").keydown(function()
 		$("textarea").keyup(function()
 		{
@@ -39,10 +39,11 @@
 			//alert($(this).val());
 			
 			var len = $(this).val().length;
-			
 			//alert(len);
 			
 			var remain = 10 - len;
+			
+			alert(remain);
 			
 			$("h1").html(remain);
 			

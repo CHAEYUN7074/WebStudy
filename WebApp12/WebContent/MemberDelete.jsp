@@ -1,4 +1,4 @@
-<%@page import="com.test.ajax.MemberDAO"%>
+<%@page import="com.test.MemberDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <% 
 	// MemberDelete.jsp

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>JQTest02.html</title>
 <style type="text/css">
-	.item /* 요소 중에 item 이라는 클래스가 있으면 속성 적용하겠다. */
+	.item
 	{
 		border: solid 4px blue;
 		color: white;
@@ -38,43 +38,44 @@
 		//    (특별한 이벤트를 발생시키지 않아도..)
 		//    자동으로 처리될 수 있는 영역
 		
-		/* 
+		/* 테스트1)
 		$("h1").click(function()
 		{
-			//alert("클릭되었네요");
-			//alert( $(this).html() );
-			//$(this).html("어떻게 될까요?");
+			alert("클릭되었네요");
+			alert( $(this).html() );
+			$(this).html("어떻게 될까요?"); //this의 html을 "어떻게 될까요?"로 바꾼다.
 			$(this).html( $(this).html() + "★");
-		});
-		*/
+		}); */
 		
 		
 		/* 
-		// 『on()』 : 이벤트 처리
+		// 테스트2『on()』 : 이벤트 처리
 		$("h1").on("click", function()
 		{
-			//alert("클릭 이벤트 발생");
+			alert("클릭 이벤트 발생");
 			alert( $(this).html() );
-		});
-		*/
+		}); */
+
 		
 		
 		/* 	
-		$("h1").one("click", function()
+		$("h1").on("click", function()
 		{
-			//alert("클릭!!!");
-			//alert( $(this).html() );
+			alert("클릭!!!");
+			alert( $(this).html() );
 			
 			$(this).html(function(index, html)
 			{
-				//alert(html);
-				//alert(index);
+				alert(html);
+				alert(index); //index?
 				return html + "★";
 				
 			});
 			
-		}); */
-		
+		}); 
+		 */
+		 
+		 
 		/* 
 		$("h1").on(
 		{
@@ -83,7 +84,7 @@
 			mouseenter:function() { $(this).addClass("item"); }
 			, mouseleave:function() { $(this).removeClass("item");}
 		});
-		*/
+		 */
 		
 		// mouseenter, mouseleave
 		$("h1").hover(function()
@@ -105,7 +106,7 @@
 <!-- <h1 onclick="test()">윤유동</h1> -->
 <h1>윤우동</h1>
 <h1>박혜진</h1>
-<!-- <h1 class="item">박효빈</h1> -->
+<h1>박효빈</h1>
 <h1>박효빈</h1>
 
 </body>

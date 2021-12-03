@@ -44,7 +44,7 @@ NOCACHE;
 --==>> Sequence SCORESEQ이(가) 생성되었습니다.
 
 
---○ 리스트 조회 쿼리무 구성(번호, 이름, 국어점수, 영어점수, 수학점수, 총점, 평균)
+--○ 리스트 조회 쿼리문 구성(번호, 이름, 국어점수, 영어점수, 수학점수, 총점, 평균)
 SELECT SID, NAME, KOR, ENG, MAT
      , (KOR+ENG+MAT) AS TOT
      , (KOR+ENG+MAT)/3 AS AVG
@@ -68,6 +68,9 @@ INSERT INTO TBL_SCORE(SID, NAME, KOR, ENG, MAT) VALUES(SCORESEQ.NEXTVAL,'서승균'
 ;
 --==>> 1 행 이(가) 삽입되었습니다.
 
+
+select *
+from TBL_SCORE;
 
 --○ 커밋
 COMMIT;

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 
 <!-- jsp에게 일 시킴, useBean(객체화) -->
-<jsp:useBean id="ob" class="com.test.ajax.Calc" scope="page"></jsp:useBean>
+<jsp:useBean id="ob" class="com.test.Calc" scope="page"></jsp:useBean>
 <jsp:setProperty property ="*" name="ob" />
 
 <!DOCTYPE html>

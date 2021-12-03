@@ -39,7 +39,7 @@
 <!-- Calc 클래스의 객체를 현재 페이지에서 사용할 수 있도록 지정  -->
 <!-- jsp 액션태그 -->
 
-<jsp:useBean id="ob" class="com.test.ajax.Calc" scope="page"></jsp:useBean>
+<jsp:useBean id="ob" class="com.test.Calc" scope="page"></jsp:useBean>
 
 <!-- 이 구문은 스크립 릿 영역에서(★)
      『com.test.Calc ob = new com.test.Calc();』

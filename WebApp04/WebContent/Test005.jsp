@@ -19,8 +19,7 @@
 	<!-- ※ form 태그의 action 속성은 데이터 전송 및 페이지 요청을 해야하는
 	        대상 페이지를 등록하는 기능을 수행한다.
 	        (생략 시 데이터 전송 및 페이지 요청을 하게 되는 대상은 자기 자신)  
-	     ※ form 태그의 method 속서에는 get 또는 post 를 등록
-	        (생략 시 get 방식으로 처리)
+	     ※ form 태그의 method 속서에는 get 또는 post 를 등록(생략 시 get)
 	        이는 데이터 전송 및 페이지 요청 방식에 해당한다.	-->
 	<form action="/WebApp04/login" method="post">
 	<!-- 서버에 넘기게 되는 데이터는 name="" 이다. -->

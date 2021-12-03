@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<jsp:useBean id="ob" class="com.test.ajax.FriendDTO" scope="page"></jsp:useBean>
+<jsp:useBean id="ob" class="com.test.FriendDTO" scope="page"></jsp:useBean>
 <jsp:setProperty property="*" name="ob" />
 
 <%

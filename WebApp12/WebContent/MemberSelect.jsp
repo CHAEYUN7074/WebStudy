@@ -1,5 +1,5 @@
-<%@page import="com.test.ajax.MemberDTO"%>
-<%@page import="com.test.ajax.MemberDAO"%>
+<%@page import="com.test.MemberDTO"%>
+<%@page import="com.test.MemberDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
 	StringBuffer str = new StringBuffer();

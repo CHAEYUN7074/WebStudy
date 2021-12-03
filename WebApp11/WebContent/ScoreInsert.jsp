@@ -1,5 +1,5 @@
-<%@page import="com.test.ajax.ScoreDTO"%>
-<%@page import="com.test.ajax.ScoreDAO"%>
+<%@page import="com.test.ScoreDTO"%>
+<%@page import="com.test.ScoreDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
 	//ScoreInsert.jsp

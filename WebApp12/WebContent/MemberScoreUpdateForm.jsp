@@ -1,5 +1,5 @@
-<%@page import="com.test.ajax.MemberScoreDTO"%>
-<%@page import="com.test.ajax.MemberScoreDAO"%>
+<%@page import="com.test.MemberScoreDTO"%>
+<%@page import="com.test.MemberScoreDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <% 
 	// 이전 페이지(MemberScoreSelect.jsp)로부터 데이터(sid) 수신
