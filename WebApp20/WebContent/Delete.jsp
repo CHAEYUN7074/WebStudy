@@ -1,44 +1,23 @@
-<%@page import="java.net.URLEncoder"%>
 <%@page import="com.test.BoardDAO"%>
-<%@page import="com.util.DBConn"%>
 <%@page import="java.sql.Connection"%>
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@page import="com.util.DBConn"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%
- 	request.setCharacterEncoding("UTF-8");
- 	String cp = request.getContextPath();
+	request.setCharacterEncoding("UTF-8");
+	String cp = request.getContextPath();
 %>
-<jsp:useBean id="dto" class="com.test.BoardDTO" scope="page"></jsp:useBean>
-<jsp:setProperty property="*" name="dto"/>
+
 <%
-	String numStr = request.getParameter("num");
-	String pageNum = request.getParameter("pageNum");
-	int num = Integer.parseInt(numStr);
-	// Article 에서 param 으로 넘겼으나, 받을때는 searchKey / searachValue 로 받아야 한다.
-	String searchKey = request.getParameter("searchKey");
-	String searchValue = request.getParameter("searchValue");
-	
-	String encodeValue = URLEncoder.encode(searchValue, "UTF-8");
-	
-	// System.out.println(encodeValue);
+	// Delete.jsp
+	// 전페이지로부터 num과 pageNum만 받으면 된다.
+	int num = Integer.parseInt(request.getParameter("num"));
+	//DAO에 제거하는 메소드를 호출하면서 매개변수로 넘겨주는게 INT라서 INT NUM
+	int pageNum = Integer.parseInt(request.getParameter("pageNum"));
 	
 	Connection conn = DBConn.getConnection();
 	BoardDAO dao = new BoardDAO(conn);
 	
 	dao.deleteData(num);
 	
-	DBConn.close();
-	
-	String str = "List.jsp" + "?pageNum=" + pageNum + "&searchKey=" + searchKey + "&searchValue=" + encodeValue;
-	response.sendRedirect(str);
+	response.sendRedirect("List.jsp?pageNum="+pageNum);
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Delete.jsp</title>
-</head>
-<body>
-
-
-</body>
-</html>
