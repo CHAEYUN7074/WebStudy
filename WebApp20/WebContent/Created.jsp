@@ -80,7 +80,7 @@
       
       
       f.action = "<%=cp%>/Created_ok.jsp";
-      f.submit();
+      f.();
       
       
    }

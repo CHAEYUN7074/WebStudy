@@ -38,6 +38,6 @@
 	// 안내
 	response.sendRedirect("List.jsp");
 	
-	// http://211.238.142.150:8090/WebApp20/List.jsp 이 주소로 글쓰니까 ip주소 달라짐
+	// http://211.238.142.171:8090/WebApp20/List.jsp 이 주소로 글쓰니까 ip주소 달라짐
 	// localhost 면 0:0:0:0:0:0:0:1 나옴!
 %>

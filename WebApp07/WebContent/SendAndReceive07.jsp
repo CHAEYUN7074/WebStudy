@@ -207,11 +207,6 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <style type="text/css">
 	td {text-align: right;}
-	td.nowSat {background-color: aqua; font-weight: bold; color: blue;}
-	td.nowSun {background-color: aqua; font-weight: bold; color: red;}
-	td.now {background-color: aqua; font-weight: bold;}
-	td.sat {color:blue;}
-	td.sun {color:red;}
 </style>
 <script type="text/javascript">
 
